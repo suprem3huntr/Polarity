@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Vector2 velocityModifier;
     Rigidbody2D rb;
+    Animator anim;
     float horizontalMovementInput;
     float oldVelX=0;
     [SerializeField] float drag=0;
@@ -21,11 +22,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb=gameObject.GetComponent<Rigidbody2D>();
+        anim=gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        
         horizontalMovementInput=Input.GetAxisRaw("Horizontal");
         if(velocityModifier.x!=0)
         {

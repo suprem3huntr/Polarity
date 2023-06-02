@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpspeed;
     [SerializeField] float gravityModifier=1;
+    public Sprite headRed,headBlue,eyeLeftRed,eyeLeftBlue,eyeRightRed,eyeRightBlue;
+    public SpriteRenderer head,eyeLeft,eyeRight;
     public int polarity=1;
     public Vector2 temp;
     
@@ -28,11 +30,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         
+        if(rb.velocity.x>0 && gameObject.transform.rotation.y==0)
+        {
+            transform.rotation=Quaternion.Euler(0,180,0);
+        }
+        if(rb.velocity.x<0 && gameObject.transform.rotation.y!=0)
+        {
+              
+            transform.rotation= Quaternion.Euler(0,0,0);
+        }
         horizontalMovementInput=Input.GetAxisRaw("Horizontal");
         if(velocityModifier.x!=0)
         {
+            
             rb.velocity=new Vector2(oldVelX+horizontalMovementInput*speed+velocityModifier.x,rb.velocity.y+velocityModifier.y);
             oldVelX=rb.velocity.x-horizontalMovementInput*speed;
         }
@@ -46,12 +57,20 @@ public class PlayerMovement : MonoBehaviour
             {
                 oldVelX=Mathf.Clamp(oldVelX+drag*Time.deltaTime,oldVelX,0);
             }
+            
             rb.velocity=new Vector2(oldVelX+horizontalMovementInput*speed,rb.velocity.y+velocityModifier.y);
             oldVelX=rb.velocity.x-horizontalMovementInput*speed;
+
         }
+
+        anim.SetFloat("xmove",Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("oldxmove",Mathf.Abs(oldVelX));
+
+
         if(isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.velocity=new Vector2(rb.velocity.x,rb.velocity.y+jumpspeed);
+            anim.SetTrigger("Jump");
         }
 
         if(!isGrounded && velocityModifier==Vector2.zero &&rb.velocity.y<0)
@@ -63,12 +82,20 @@ public class PlayerMovement : MonoBehaviour
             if(polarity==1)
             {
                 polarity=-1;
+                head.sprite=headBlue;
+                eyeLeft.sprite=eyeLeftBlue;
+                eyeRight.sprite=eyeRightBlue;
             }
             else
             {
                 polarity=1;
+                head.sprite=headRed;
+                eyeLeft.sprite=eyeLeftRed;
+                eyeRight.sprite=eyeRightRed;
+            
             }
         }
+        
     }
 
     

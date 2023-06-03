@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if(Input.GetButtonDown("Fire1"))
             {
+                oldVelX=0;
                 if(polarity==1)
                 {
                     polarity=-1;

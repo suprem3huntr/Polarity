@@ -25,7 +25,7 @@ public class MagnetField : MonoBehaviour
         var particleprop=ps.shape;
         particleprop.enabled=false;
         var main=ps.main;
-        main.duration=10;
+        
         main.startSize=range;
         main.maxParticles=1;
         psr.renderMode=ParticleSystemRenderMode.Mesh;
@@ -38,8 +38,8 @@ public class MagnetField : MonoBehaviour
         {
             psr.material=gm.redmat;
         }
-        psr.sortingLayerName="Field";
         
+        psr.sortingLayerName="Field";
 
     }
 

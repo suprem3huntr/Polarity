@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
         {
             GM.LevelComplete();
         }
-        else if(col.gameObject.CompareTag("Player") && unlocked)
+        else if(col.gameObject.CompareTag("Player"))
         {
             anim.SetTrigger("Open");
             open=true;
@@ -31,7 +31,7 @@ public class Door : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D col)
     {
-        if(col.gameObject.CompareTag("Player") && unlocked)
+        if(col.gameObject.CompareTag("Player"))
         {
             anim.SetTrigger("Close");
             open=false;

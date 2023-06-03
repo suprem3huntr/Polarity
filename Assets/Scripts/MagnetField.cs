@@ -17,7 +17,7 @@ public class MagnetField : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm=GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        //gm=GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
 
         range = gameObject.GetComponent<CircleCollider2D>().radius;
         ps=gameObject.GetComponent<ParticleSystem>();
@@ -32,11 +32,11 @@ public class MagnetField : MonoBehaviour
         psr.mesh=Resources.GetBuiltinResource<Mesh>("Sphere.fbx");
         if (polarity==-1)
         {
-            psr.material=gm.bluemat;
+            //psr.material=gm.bluemat;
         }
         else
         {
-            psr.material=gm.redmat;
+            //psr.material=gm.redmat;
         }
         psr.sortingLayerName="Field";
         

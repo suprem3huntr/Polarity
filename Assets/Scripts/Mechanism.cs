@@ -30,7 +30,7 @@ public class Mechanism : MonoBehaviour
                 {
                     if (move)
                     {
-                        posdir=1;
+                        posdir=-1;
                     }
                     else
                     {

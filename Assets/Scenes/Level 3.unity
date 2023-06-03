@@ -59112,8 +59112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b92e5d2ab5ec64f92124638a225ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  polarity: 0
-  intensity: 0
+  polarity: -1
+  intensity: 35
 --- !u!199 &1266909326
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -63943,7 +63943,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 4
 --- !u!4 &1266909329
 Transform:
   m_ObjectHideFlags: 0
@@ -68883,7 +68883,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 4
 --- !u!4 &1515879910
 Transform:
   m_ObjectHideFlags: 0
@@ -68999,11 +68999,10 @@ GameObject:
   - component: {fileID: 1643915285}
   - component: {fileID: 1643915284}
   - component: {fileID: 1643915283}
-  - component: {fileID: 1643915288}
   - component: {fileID: 1643915287}
   m_Layer: 0
   m_Name: Tile (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69155,51 +69154,6 @@ MonoBehaviour:
   pos1: {x: 9.7, y: 2.4}
   pos2: {x: 13.7, y: 2.4}
   movespeed: 3
---- !u!61 &1643915288
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643915282}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0060014725, y: 0.5401182}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9159851, y: 0.15990543}
-  m_EdgeRadius: 0
 --- !u!1 &1659286583
 GameObject:
   m_ObjectHideFlags: 0
@@ -69233,8 +69187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   move: 1
-  pos1: {x: 57.8, y: 7.1}
-  pos2: {x: 57.8, y: 11.5}
+  pos1: {x: 64.7, y: 11.5}
+  pos2: {x: 64.7, y: 7.5}
   movespeed: 3
 --- !u!114 &1659286585
 MonoBehaviour:
@@ -69442,11 +69396,10 @@ GameObject:
   - component: {fileID: 1689993945}
   - component: {fileID: 1689993944}
   - component: {fileID: 1689993943}
-  - component: {fileID: 1689993942}
   - component: {fileID: 1689993941}
   m_Layer: 0
   m_Name: Tile (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69468,51 +69421,6 @@ MonoBehaviour:
   pos1: {x: 19.7, y: 2.4}
   pos2: {x: 15.7, y: 2.4}
   movespeed: 3
---- !u!61 &1689993942
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689993940}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0060014725, y: 0.5401182}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9159851, y: 0.15990543}
-  m_EdgeRadius: 0
 --- !u!114 &1689993943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69744,9 +69652,10 @@ GameObject:
   - component: {fileID: 1871488667}
   - component: {fileID: 1871488666}
   - component: {fileID: 1871488665}
+  - component: {fileID: 1871488668}
   m_Layer: 0
   m_Name: Tile (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69763,8 +69672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee340f571037eb54a826bc11308f4629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
-  move: 0
+  active: 1
+  move: 1
   pos1: {x: 36.58, y: 3.45}
   pos2: {x: 36.58, y: -3.99}
   movespeed: 4
@@ -69835,6 +69744,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1871488668
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871488664}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &1983704712
 PrefabInstance:
   m_ObjectHideFlags: 0

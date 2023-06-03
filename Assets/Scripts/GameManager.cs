@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
     public Material redmat;
     public Material bluemat;
     int sceneno;
+    public int maxsceneno;
     [SerializeField] GameObject mainMenu,pauseMenu,deadMenu,endMenu,nextMenu;
     public bool pause;
 
     void Awake()
     {
+        
         if(instance!=null && instance!=this)
         {
             Destroy(this.gameObject);
@@ -24,7 +26,10 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
-
+    void Start()
+    {
+        maxsceneno=SceneManager.sceneCountInBuildSettings-1;
+    }
     public void StartGame()
     {
         Unpause();
@@ -102,7 +107,7 @@ public class GameManager : MonoBehaviour
     }
     public void Dead()
     {
-        Debug.Log("f");
+
         Time.timeScale=0;
         pause=true;
         mainMenu.SetActive(false);
@@ -110,6 +115,40 @@ public class GameManager : MonoBehaviour
         deadMenu.SetActive(true);
         endMenu.SetActive(false);
         nextMenu.SetActive(false);
+    }
+
+    public void LevelComplete()
+    {
+        if (sceneno==maxsceneno)
+        {
+            GameFinish();
+        }
+        else
+        {
+            MoreLevel();
+        }
+    }
+
+    void GameFinish()
+    {
+        Time.timeScale=0;
+        pause=true;
+        mainMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        deadMenu.SetActive(false);
+        endMenu.SetActive(true);
+        nextMenu.SetActive(false);
+    }
+
+    void MoreLevel()
+    {
+        Time.timeScale=0;
+        pause=true;
+        mainMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        deadMenu.SetActive(false);
+        endMenu.SetActive(false);
+        nextMenu.SetActive(true);
     }
 
     // Start is called before the first frame update

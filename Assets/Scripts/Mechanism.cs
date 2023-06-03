@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Mechanism : MonoBehaviour
 {
-    bool active=false;
+    [SerializeField] bool active=false;
+    [SerializeField] bool move;
+    
+    [SerializeField] Vector2 pos1,pos2;
+    [SerializeField] float movespeed;
+    Vector2 curpos;
+    int posdir=1;
     
     // Start is called before the first frame update
     void Start()
@@ -15,9 +21,34 @@ public class Mechanism : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        curpos=new Vector2(gameObject.transform.position.x,gameObject.transform.position.y);
         if (active)
         {
-
+            if(curpos==pos2)
+            {
+                posdir=-1;
+            }
+            else if(curpos==pos1)
+            {
+                posdir=1;
+            }
+            
+            
+                
+            if (posdir==1)
+            {
+                transform.position=Vector2.MoveTowards(transform.position,pos2,movespeed*Time.deltaTime);
+            }
+            else
+            {
+                transform.position=Vector2.MoveTowards(transform.position,pos1,movespeed*Time.deltaTime);
+            }
+            
+                
+            
+            
+            
         }
     }
     public void Activate()

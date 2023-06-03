@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     Animator anim;
-    bool unlocked=true,open;
+    bool open;
     GameManager GM;
     // Start is called before the first frame update
     void Start()

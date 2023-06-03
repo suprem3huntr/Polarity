@@ -12,14 +12,17 @@ public class MagnetField : MonoBehaviour
     [SerializeField] float intensity;
     ParticleSystem ps;
     ParticleSystemRenderer psr;
+    CircleCollider2D collider;
     GameManager gm;
     float range;
     // Start is called before the first frame update
     void Start()
     {
         gm=GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
-
-        range = gameObject.GetComponent<CircleCollider2D>().radius;
+        collider=gameObject.GetComponent<CircleCollider2D>();
+        range = collider.radius;
+        collider.isTrigger=true;
+        
         ps=gameObject.GetComponent<ParticleSystem>();
         psr=gameObject.GetComponent<ParticleSystemRenderer>();
         var particleprop=ps.shape;

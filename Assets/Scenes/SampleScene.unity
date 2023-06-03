@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polarity: 1
-  intensity: 0.3
+  intensity: 30
 --- !u!4 &689804826
 Transform:
   m_ObjectHideFlags: 0
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd1dae697fb4744f9ca3b5782223ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drag: 5
+  drag: 9
   isGrounded: 0
   speed: 5
   jumpspeed: 5

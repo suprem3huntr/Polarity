@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         if(velocityModifier.x!=0)
         {
             
-            rb.velocity=new Vector2(oldVelX+horizontalMovementInput*speed+velocityModifier.x,rb.velocity.y+velocityModifier.y);
+            rb.velocity=new Vector2(oldVelX+horizontalMovementInput*speed+velocityModifier.x*Time.deltaTime,rb.velocity.y+velocityModifier.y*Time.deltaTime);
             oldVelX=rb.velocity.x-horizontalMovementInput*speed;
         }
         else
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 oldVelX=Mathf.Clamp(oldVelX+drag*Time.deltaTime,oldVelX,0);
             }
             
-            rb.velocity=new Vector2(oldVelX+horizontalMovementInput*speed,rb.velocity.y+velocityModifier.y);
+            rb.velocity=new Vector2(oldVelX+horizontalMovementInput*speed,rb.velocity.y+velocityModifier.y*Time.deltaTime);
             oldVelX=rb.velocity.x-horizontalMovementInput*speed;
 
         }
@@ -95,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
             
             }
         }
+        temp=velocityModifier;
         
     }
 

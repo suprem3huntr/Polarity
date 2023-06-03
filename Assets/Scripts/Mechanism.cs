@@ -28,7 +28,14 @@ public class Mechanism : MonoBehaviour
             {
                 if(curpos==pos2)
                 {
-                    posdir=-1;
+                    if (move)
+                    {
+                        posdir=1;
+                    }
+                    else
+                    {
+                        active=false;
+                    }
                 }
                 else if(curpos==pos1)
                 {

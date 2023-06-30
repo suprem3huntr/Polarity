@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     int sceneno;
     public int maxsceneno;
     [SerializeField] GameObject mainMenu,pauseMenu,deadMenu,endMenu,nextMenu;
-    public bool pause;
+    public bool pause, levelfinish;
 
     void Awake()
     {
@@ -117,16 +117,10 @@ public class GameManager : MonoBehaviour
         nextMenu.SetActive(false);
     }
 
-    public void LevelComplete()
+    public void LevelComplete(Animator anim)
     {
-        if (sceneno==maxsceneno)
-        {
-            GameFinish();
-        }
-        else
-        {
-            MoreLevel();
-        }
+        levelfinish=true;
+        StartCoroutine(WaitForAnim(anim));
     }
 
     void GameFinish()
@@ -149,6 +143,25 @@ public class GameManager : MonoBehaviour
         deadMenu.SetActive(false);
         endMenu.SetActive(false);
         nextMenu.SetActive(true);
+    }
+
+    IEnumerator WaitForAnim(Animator anim)
+    {
+        while(anim.GetCurrentAnimatorStateInfo(0).normalizedTime<1)
+        {
+            yield return null;
+        }
+        
+        levelfinish=false;
+        if (sceneno==maxsceneno)
+        {
+            GameFinish();
+        }
+        else
+        {
+            MoreLevel();
+        }
+
     }
 
     // Start is called before the first frame update

@@ -19,7 +19,7 @@ public class Door : MonoBehaviour
     {
         if(open && col.gameObject.CompareTag("Player"))
         {
-            GM.LevelComplete();
+            GM.LevelComplete(anim);
         }
         else if(col.gameObject.CompareTag("Player"))
         {
